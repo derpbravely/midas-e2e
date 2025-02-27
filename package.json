@@ -8,10 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "playwright test"
+    "test": "npm run update-components && playwright test",
+    "update-components": "npm i @midas-ds/components@latest"
   },
   "dependencies": {
-    "@midas-ds/components": "^2.0.0",
+    "@midas-ds/components": "^2.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
