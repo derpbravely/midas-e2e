@@ -22,14 +22,7 @@ export default function Form() {
       <Controller
         name="name"
         control={control}
-        render={({ field: { onChange, value } }) => (
-          <TextField
-            label="Name"
-            value={value}
-            onChange={onChange}
-            isRequired
-          />
-        )}
+        render={({ field }) => <TextField {...field} label="Name" isRequired />}
       />
       <Controller
         name="fruit"
@@ -50,12 +43,11 @@ export default function Form() {
       <Controller
         control={control}
         name="date"
-        render={({ field: { onChange, value } }) => (
+        render={({ field }) => (
           <DatePicker
+            {...field}
             description="YYYY-MM-DD"
             label="Välj datum"
-            onChange={onChange}
-            value={value}
             isRequired
           />
         )}
@@ -63,14 +55,13 @@ export default function Form() {
       <Controller
         control={control}
         name="animal"
-        render={({ field: { onChange, value } }) => (
+        render={({ field }) => (
           <RadioGroup
+            // TODO: The '' value creates an accessibility issue
+            {...field}
             description="Välj ett djur"
             label="Djur"
             isRequired
-            onChange={onChange}
-            // TODO: The '' value creates an accessibility issue
-            value={value}
           >
             {animals.map(({ id, name }) => (
               <Radio key={id} value={id} id={id}>
@@ -83,8 +74,8 @@ export default function Form() {
       <Controller
         control={control}
         name="accept"
-        render={({ field: { onChange, value } }) => (
-          <Checkbox isSelected={value} onChange={onChange} isRequired>
+        render={({ field: { value, ...rest } }) => (
+          <Checkbox isSelected={value} {...rest} isRequired>
             Jag godkänner villkoren
           </Checkbox>
         )}
