@@ -28,6 +28,7 @@ export default function Form() {
         name="fruit"
         control={control}
         render={({ field: { onChange, value } }) => (
+          // TODO: Should use locale when comparing keys?
           <ComboBox
             label="Vad är din favoritfrukt?"
             placeholder="Välj en frukt"
