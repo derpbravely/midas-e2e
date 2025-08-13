@@ -21,7 +21,6 @@ import {
   DialogTrigger,
   Dropdown,
   DropdownItem,
-  FileUpload,
   Flex,
   FlexItem,
   GlobalToastRegion,
@@ -141,10 +140,6 @@ export default function App() {
           <Button variant="tertiary">Dela</Button>
         </DropdownItem>
       </Dropdown>
-      <FileUpload
-        label="Välj en fil att ladda upp"
-        description="Du kan välja en fil"
-      />
       <Flex>
         <FlexItem col={12}>
           <span>col=12</span>
