@@ -15,14 +15,12 @@ import {
   Checkbox,
   Column,
   ComboBox,
-  ComboBoxItem,
+  ListBoxItem,
   DateField,
   DatePicker,
   DialogTrigger,
   Dropdown,
   DropdownItem,
-  Flex,
-  FlexItem,
   GlobalToastRegion,
   Grid,
   GridItem,
@@ -53,9 +51,10 @@ import {
   toastQueue,
   Tooltip,
   TooltipTrigger,
+  TabList,
+  Tab,
+  TabPanel,
 } from "@midas-ds/components";
-import { typography } from "@midas-ds/components/theme";
-import "@midas-ds/components/global.css";
 import {
   Bell,
   Pen,
@@ -66,9 +65,9 @@ import {
   ClipboardList,
   Save,
 } from "lucide-react";
+import "@midas-ds/components/default.css";
 
 export default function App() {
-  console.log(typography);
   return (
     <>
       <Accordion>
@@ -121,11 +120,11 @@ export default function App() {
         label="Välj din favoritfrukt"
         description="Du kan bara välja en"
       >
-        <ComboBoxItem id="Lime">Lime</ComboBoxItem>
-        <ComboBoxItem id="Äpple">Äpple</ComboBoxItem>
-        <ComboBoxItem id="Banan">Banan</ComboBoxItem>
-        <ComboBoxItem id="Kiwi">Kiwi</ComboBoxItem>
-        <ComboBoxItem id="Apelsin">Apelsin</ComboBoxItem>
+        <ListBoxItem id="Lime">Lime</ListBoxItem>
+        <ListBoxItem id="Äpple">Äpple</ListBoxItem>
+        <ListBoxItem id="Banan">Banan</ListBoxItem>
+        <ListBoxItem id="Kiwi">Kiwi</ListBoxItem>
+        <ListBoxItem id="Apelsin">Apelsin</ListBoxItem>
       </ComboBox>
       <DatePicker label="Välj ett datum" />
       <DateField label="Etikett" description="Beskrivning" />
@@ -140,41 +139,27 @@ export default function App() {
           <Button variant="tertiary">Dela</Button>
         </DropdownItem>
       </Dropdown>
-      <Flex>
-        <FlexItem col={12}>
-          <span>col=12</span>
-        </FlexItem>
-        <FlexItem>
-          <span>not set</span>
-        </FlexItem>
-        <FlexItem col="auto">
-          <span>col=auto</span>
-        </FlexItem>
-        <FlexItem col={6}>
-          <span>col=6</span>
-        </FlexItem>
-      </Flex>
       <Grid>
-        <GridItem col={12}>
-          <span>col=12</span>
+        <GridItem size={12}>
+          <span>size=12</span>
         </GridItem>
-        <GridItem col={3}>
-          <span>col=3</span>
+        <GridItem size={3}>
+          <span>size=3</span>
         </GridItem>
-        <GridItem col={4}>
-          <span>col=4</span>
+        <GridItem size={4}>
+          <span>size=4</span>
         </GridItem>
-        <GridItem col={5}>
-          <span>col=5</span>
+        <GridItem size={5}>
+          <span>size=5</span>
         </GridItem>
-        <GridItem col={4}>
-          <span>col=4</span>
+        <GridItem size={4}>
+          <span>size=4</span>
         </GridItem>
-        <GridItem col={4}>
-          <span>col=4</span>
+        <GridItem size={4}>
+          <span>size=4</span>
         </GridItem>
-        <GridItem col={4}>
-          <span>col=4</span>
+        <GridItem size={4}>
+          <span>size=4</span>
         </GridItem>
       </Grid>
       <Heading level={2}>Jag är en vanlig h2-rubrik</Heading>
@@ -264,14 +249,16 @@ export default function App() {
         description="Välj vilken du vill"
         placeholder="Välj en frukt"
         selectionMode="single"
-        options={[
+        items={[
           { id: "apelsin", name: "Apelsin" },
           { id: "banan", name: "Banan" },
           { id: "citron", name: "Citron" },
           { id: "dadel", name: "Dadel" },
           { id: "fikon", name: "Fikon" },
         ]}
-      />
+      >
+        {(item) => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+      </Select>
       <Skeleton height="48px" />
       <Spinner />
       <Table aria-label="Fruit">
@@ -290,17 +277,15 @@ export default function App() {
           </Row>
         </TableBody>
       </Table>
-      <Tabs
-        label="Viktig information om frukter och bär"
-        tabs={[
-          "Vitaminer",
-          "Frysta frukter och bär",
-          "Frysta importerade hallon",
-        ]}
-      >
-        <Text>...</Text>
-        <Text>...</Text>
-        <Text>...</Text>
+      <Tabs>
+        <TabList aria-label="Viktig information om frukter och bär">
+          <Tab id="vitaminer">...</Tab>
+          <Tab id="frukter">...</Tab>
+          <Tab id="hallon">...</Tab>
+        </TabList>
+        <TabPanel id="vitaminer">...</TabPanel>
+        <TabPanel id="frukter">...</TabPanel>
+        <TabPanel id="hallon">...</TabPanel>
       </Tabs>
       <TagGroup>
         <Tag>Tag med information</Tag>
