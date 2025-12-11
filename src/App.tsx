@@ -66,10 +66,12 @@ import {
   Save,
 } from "lucide-react";
 import "@midas-ds/components/default.css";
+import ModalWithComboBox from "./ModalWithComboBox";
 
 export default function App() {
   return (
     <>
+      <ModalWithComboBox />
       <Accordion>
         <AccordionItem id="mandarin" title="Mandarin">
           Liten orange citrusfrukt
