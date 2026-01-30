@@ -19,8 +19,6 @@ import {
   DateField,
   DatePicker,
   DialogTrigger,
-  Dropdown,
-  DropdownItem,
   GlobalToastRegion,
   Grid,
   GridItem,
@@ -130,17 +128,6 @@ export default function App() {
       </ComboBox>
       <DatePicker label="Välj ett datum" />
       <DateField label="Etikett" description="Beskrivning" />
-      <Dropdown title="Meny">
-        <DropdownItem>
-          <Button variant="tertiary">Skriv ut</Button>
-        </DropdownItem>
-        <DropdownItem>
-          <Button variant="tertiary">Avbryt</Button>
-        </DropdownItem>
-        <DropdownItem>
-          <Button variant="tertiary">Dela</Button>
-        </DropdownItem>
-      </Dropdown>
       <Grid>
         <GridItem size={12}>
           <span>size=12</span>
@@ -302,7 +289,7 @@ export default function App() {
               { type: "success", message: "Allt funkar som det ska!" },
               {
                 timeout: 5000,
-              }
+              },
             )
           }
         >
