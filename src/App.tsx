@@ -24,9 +24,7 @@ import {
   GridItem,
   Heading,
   InfoBanner,
-  Layout,
   Link,
-  LinkButton,
   Logo,
   Modal,
   ProgressBar,
@@ -53,16 +51,7 @@ import {
   Tab,
   TabPanel,
 } from "@midas-ds/components";
-import {
-  Bell,
-  Pen,
-  X,
-  House,
-  Plus,
-  Gavel,
-  ClipboardList,
-  Save,
-} from "lucide-react";
+import { Bell, Pen, X, Save } from "lucide-react";
 import "@midas-ds/components/default.css";
 import ModalWithComboBox from "./ModalWithComboBox";
 
@@ -157,56 +146,7 @@ export default function App() {
         title="Formuläret har skickats"
         message="Allt gick bra. Du kan nu stänga fönstret."
       />
-      <Layout
-        variant="internal"
-        items={[
-          {
-            items: [
-              {
-                title: "Översikt",
-                href: "#",
-                icon: House,
-              },
-            ],
-          },
-          {
-            title: "Ansökan",
-            items: [
-              {
-                title: "Skapa ansökan",
-                href: "#",
-                icon: Plus,
-              },
-              {
-                title: "Beslut",
-                href: "#",
-                icon: Gavel,
-              },
-            ],
-          },
-          {
-            title: "Kort och konto",
-            items: [
-              {
-                title: "Avvikelser",
-                href: "#",
-                icon: ClipboardList,
-                hasBadge: true,
-              },
-            ],
-          },
-        ]}
-        title="Skapa ansökningar"
-        user={{ name: "Namn Namnsson", title: "Roll eller behörighet" }}
-        app={{ name: "Namn på applikationen" }}
-        headerChildren={
-          <LinkButton variant="tertiary" target="_blank">
-            Öppna annan tjänst
-          </LinkButton>
-        }
-      >
-        derp
-      </Layout>
+
       <Text>
         En text med en <Link href="#">länk</Link> i ett textstycke.
       </Text>
@@ -288,7 +228,7 @@ export default function App() {
             toastQueue.add(
               { type: "success", message: "Allt funkar som det ska!" },
               {
-                timeout: 5000,
+                timeout: 100000,
               },
             )
           }

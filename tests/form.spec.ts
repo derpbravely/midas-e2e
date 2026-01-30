@@ -10,6 +10,10 @@ test.describe("Form elements", () => {
   });
 
   test("are fillable using a keyboard", async ({ page }) => {
+    // Go to main content
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Enter");
+
     // Enter name
     await page.keyboard.press("Tab");
     await page.keyboard.type("John Doe");
