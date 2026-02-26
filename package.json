@@ -1,12 +1,12 @@
 {
   "name": "midas-e2e",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "tsc -b && bunx --bun vite build",
-    "lint": "eslint .",
+    "lint": "oxlint .",
     "preview": "bunx --bun vite preview",
     "test": "bun run update-components && playwright test",
     "test:ui": "playwright test --ui",
@@ -21,16 +21,15 @@
     "react-router": "^7.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
     "@playwright/test": "^1.50.1",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^5.1.2",
-    "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.0.0",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.24.1",
     "vite": "^7.3.1"

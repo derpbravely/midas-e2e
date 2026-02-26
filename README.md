@@ -5,7 +5,7 @@ This repository is for testing new releases of `@midas-ds/components`
 ## Installation
 
 ```bash
-npm i
+bun i
 ```
 
 ## Tests
@@ -15,11 +15,11 @@ npm i
 This command installs the latest version of `@midas-ds/components`
 
 ```bash
-npm run test
+bun run test
 ```
 
 ### Run tests in UI mode
 
 ```bash
-npm run test:ui
+bun run test:ui
 ```

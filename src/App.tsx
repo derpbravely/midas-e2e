@@ -105,10 +105,7 @@ export default function App() {
         </CardContent>
       </Card>
       <Checkbox>Jag godkänner villkoren</Checkbox>
-      <ComboBox
-        label="Välj din favoritfrukt"
-        description="Du kan bara välja en"
-      >
+      <ComboBox label="Välj din favoritfrukt" description="Du kan bara välja en">
         <ListBoxItem id="Lime">Lime</ListBoxItem>
         <ListBoxItem id="Äpple">Äpple</ListBoxItem>
         <ListBoxItem id="Banan">Banan</ListBoxItem>
@@ -163,10 +160,7 @@ export default function App() {
         </Modal>
       </DialogTrigger>
       <ProgressBar label="Laddar..." showValueLabel value={30} />
-      <RadioGroup
-        label="Välj din favoritfrukt"
-        description="Du kan bara välja en"
-      >
+      <RadioGroup label="Välj din favoritfrukt" description="Du kan bara välja en">
         <Radio value="apple">Äpple</Radio>
         <Radio value="banan">Banan</Radio>
         <Radio value="kiwi">Kiwi</Radio>

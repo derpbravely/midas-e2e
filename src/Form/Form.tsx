@@ -45,12 +45,7 @@ export default function Form() {
         control={control}
         name="date"
         render={({ field }) => (
-          <DatePicker
-            {...field}
-            description="YYYY-MM-DD"
-            label="Välj datum"
-            isRequired
-          />
+          <DatePicker {...field} description="YYYY-MM-DD" label="Välj datum" isRequired />
         )}
       />
       <Controller
