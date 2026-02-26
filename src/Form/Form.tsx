@@ -2,11 +2,11 @@ import {
   Button,
   Checkbox,
   ComboBox,
-  ComboBoxItem,
   DatePicker,
   RadioGroup,
   TextField,
   Radio,
+  ListBoxItem,
 } from "@midas-ds/components";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
@@ -37,7 +37,7 @@ export default function Form() {
             onSelectionChange={onChange}
             isRequired
           >
-            {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+            {(item) => <ListBoxItem>{item.name}</ListBoxItem>}
           </ComboBox>
         )}
       />
